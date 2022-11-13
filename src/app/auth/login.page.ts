@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 
 @Component({
   template: `
-    <form #f="ngForm" (ngSubmit)="onSubmit()">
+    <form class="mt-5" #f="ngForm" (ngSubmit)="onSubmit()">
   <div class="mb-3">
     <label for="email" class="form-label">Email</label>
     <input type="email" ngModel name="email" class="form-control" id="email">
@@ -18,6 +18,25 @@ import { AuthService } from './auth.service';
 <h3 *ngIf="error">{{ error }}</h3>
   `,
   styles: [
+    `
+    form{
+      width: 80%;
+    }
+  
+    div{
+      width: 40%;      
+    }
+
+    form, 
+    div{
+      text-align:center;
+      margin: 0 auto;
+    }
+
+    label{
+      color: #fca311;
+    }
+    `
   ]
 })
 export class LoginPage implements OnInit {

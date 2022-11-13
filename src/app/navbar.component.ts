@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-navbar',
   template: `
-    <nav class="navbar navbar-expand navbar-light bg-light">
+    <nav class="navbar navbar-expand py-4 px-5">
       <div class="container-fluid">
         <button
           class="navbar-toggler"
@@ -16,8 +16,9 @@ import { Component, OnInit } from '@angular/core';
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="#">Hidden brand</a>
+        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarTogglerDemo01">
+          <div><a class="navbar-brand" href="#">Hidden brand</a></div>
+          <div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a
@@ -70,11 +71,24 @@ import { Component, OnInit } from '@angular/core';
               >
             </li>
           </ul>
+          </div>
         </div>
       </div>
     </nav>
   `,
-  styles: [],
+  styles: [
+    `
+    nav{
+      background-color: #14213d;
+    }
+    a{
+      color: white;
+    }
+    nav-link ::active {
+      color: red;
+    }
+    `
+  ],
 })
 export class NavbarComponent implements OnInit {
   constructor() {}

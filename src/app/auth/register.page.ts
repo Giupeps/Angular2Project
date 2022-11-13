@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 
 @Component({
   template: `
-    <form #f="ngForm" (ngSubmit)="onSubmit()">
+    <form class="d-flex flex-wrap justify-content-center mt-5" #f="ngForm" (ngSubmit)="onSubmit()">
   <div class="mb-3">
     <label for="firstname" class="form-label">Firstname</label>
     <input type="text" ngModel name="firstname" class="form-control" id="firstname" >
@@ -22,12 +22,34 @@ import { Router } from '@angular/router';
     <label for="password" class="form-label">Password</label>
     <input type="password" ngModel name="password" class="form-control" id="password">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary mt-5">Submit</button>
 </form>
 <h3 *ngIf="error">{{ error }}</h3>
 
   `,
   styles: [
+    `form{
+      width: 50%;
+    }
+  
+    div{
+      width: 40%;      
+    }
+
+    form, 
+    div{
+      text-align:center;
+      margin: 0 auto;
+    }
+
+    label{
+      color: #fca311;
+    }
+
+    button{
+      width: 40%;
+    }
+    `
   ]
 })
 export class RegisterPage implements OnInit {

@@ -15,7 +15,16 @@ import { UsersService } from '../users.service';
       <router-outlet></router-outlet>
     </div>
   `,
-  styles: [],
+  styles: [
+
+   ` 
+  li{
+      background-color:#14213d;
+      color: white;
+    }
+    
+    `
+  ],
 })
 export class UsersPage implements OnInit {
   users!: User[];

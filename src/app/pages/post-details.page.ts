@@ -6,7 +6,7 @@ import { PostsService } from '../posts.service';
 
 @Component({
   template: `
-    <div class="container ">
+    <div class="container py-3 mt-5">
       <ng-container *ngIf="post; else elseTemplate">
         <h1 class="text-center mt-4 mb-3">
           {{ post.title }}
@@ -20,7 +20,21 @@ import { PostsService } from '../posts.service';
       <h1 class="text-center mt-5">post non trovato</h1>
     </ng-template>
   `,
-  styles: [],
+  styles: [
+    `
+    .container{
+      background-color: #14213d;
+      border-radius: 2em;
+    }
+    h1{
+      color: #e5e5e5;
+    }
+    p{
+      color: white;
+    }
+    `
+
+  ],
 })
 export class PostDetailsPage implements OnInit {
   sub!: Subscription;
